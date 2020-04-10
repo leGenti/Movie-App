@@ -36,7 +36,7 @@ class App extends React.Component{
         loading: true
       }
     })
-    axios.get("https://www.omdbapi.com/?apikey=ae94de9&s=" + str)
+    axios.get(process.env.REACT_APP_ENDPOINTMOVIES + "&s=" + str)
     .then(results => {
       console.log(results)
       this.setState({

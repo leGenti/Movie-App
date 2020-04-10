@@ -22,7 +22,7 @@ export default class Movie extends React.Component{
             }
         });
 
-        axios.get("https://www.omdbapi.com/?apikey=ae94de9&i=" 
+        axios.get(process.env.REACT_APP_ENDPOINTMOVIES + "&i="
         + this.props.match.params.id)
         .then(response => {
             this.setState({
