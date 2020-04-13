@@ -1,10 +1,12 @@
 body {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1300px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #eee;
 }
 
 code {
@@ -15,3 +17,95 @@ code {
 #root{
   text-align: center;
 }
+
+.MuiTypography-h1{
+  color: whitesmoke;
+}
+
+.MuiToolbar-root{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(34, 167, 240, 0.7) ;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.MuiAppBar-root{
+  margin-bottom: 1.5em;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.error{
+  border: 1px solid rgba(217, 30, 24, 1) !important; 
+  border-radius: 5px;
+  height: 55px;
+  background-color: rgba(217, 30, 24, 0.3) !important;
+}
+
+
+.MuiCard-root{
+  margin: 1em 1em;
+}
+
+.MuiCardHeader-root{
+  background-color: rgba(34, 167, 240, 0.7);
+  border-bottom: 1px solid white;
+}
+
+
+
+.Mui-focused fieldset {
+  border: 1px solid rgba(34, 167, 240, 1) !important;
+}
+
+
+.searchBtn{
+  margin: 0.6em 1em !important;
+  background-color: rgba(34, 167, 240, 0.7) !important;
+}
+
+.searchBtn:hover{
+  background-color: rgba(34, 167, 240, 1) !important;
+}
+
+.MuiInputBase-root{
+  margin-bottom: 10px !important;
+}
+
+
+.MuiButton-outlinedPrimary{
+  color: rgba(34, 167, 240, 1) !important;
+  border: 1px solid rgba(34, 167, 240, 1) !important;
+}
+
+.MuiCardMedia-media{
+  cursor: default;
+}
+
+.MuiCardContent-root{
+  cursor: default;
+}
+
+.movieField{
+  background-color: rgba(66, 184, 248, 0.5);
+  padding: 1em;
+  margin: 1em;
+  border-radius: 5px;
+  border: 1px solid rgba(66, 184, 248, 1);
+}
+
+.share{
+  margin-left: -20px !important;
+}
+
+.favo:hover{
+  color: red;
+}
+
+.share:hover{
+  color: rgba(66, 184, 248, 1);
+}
+
+

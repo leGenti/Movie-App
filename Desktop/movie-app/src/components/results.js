@@ -1,34 +1,59 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
+  Grid, Card, CardActionArea, 
+  CardMedia, CardContent,
+  Typography, Button,
+  CardActions, IconButton
+} from "@material-ui/core";
+import  ShareIcon  from '@material-ui/icons/Share';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
-function slugify(string) {
-    const a = 'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
-    const b = 'aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------'
-    const p = new RegExp(a.split('').join('|'), 'g')
-  
-    return string.toString().toLowerCase()
-      .replace(/\s+/g, '-') // Replace spaces with -
-      .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
-      .replace(/&/g, '-and-') // Replace & with 'and'
-      .replace(/[^\w\-]+/g, '') // Remove all non-word characters
-      .replace(/\-\-+/g, '-') // Replace multiple - with single -
-      .replace(/^-+/, '') // Trim - from start of text
-      .replace(/-+$/, '') // Trim - from end of text
-  }
+import { slugify } from "../Helpers";
 
-export default ({movies}) => 
-(
-<ul>
-    {movies.map(movie => (
-        <li key={movie.imdbID}>
-            {movie.Title} ({movie.Year}) - <Link to={`movie/${movie.imdbID}/${slugify(movie.Title)}`}>More info</Link>
-        </li>
-    ))}
-</ul> 
+export default ({ movies }) => (
+  <>
+    <Grid container spacing={1}>
+      {movies.map(movie => (
+        <Grid item xs={12} sm={6} md={4} lg={3} key={movie.imdbID}>
+          <Card>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                height="200"
+                image={movie.Poster}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {movie.Title}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  {movie.Plot}
+                </Typography>
+              </CardContent>
+              <CardContent>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Release date: {movie.Year}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <IconButton aria-label="add to favorites">
+                <FavoriteIcon className="favo" />
+              </IconButton>
+              <IconButton aria-label="share">
+                  <ShareIcon className="share"/>
+              </IconButton>
+              <Link to={`movie/${movie.imdbID}/${slugify(movie.Title)}`}>
+                <Button className="infoBtn" size="small" variant="outlined" color="primary">
+                  More info
+                </Button>
+              </Link>
+            </CardActions>
+          </Card>
+        </Grid>
+      ))}
+    </Grid>
+  </>
 );
 

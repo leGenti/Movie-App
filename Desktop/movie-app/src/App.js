@@ -4,9 +4,9 @@ import axios from 'axios';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
+import {Typography, AppBar, Toolbar} from '@material-ui/core';
 
 
 import Results from './components/results';
@@ -24,11 +24,7 @@ class App extends React.Component{
       }
     }
   }
-
-  componentDidMount(){
-    
-  }
-
+  
   searchMovies = (str) => {
     this.setState({
       movies: {
@@ -55,9 +51,14 @@ class App extends React.Component{
   render(){
     return (
       <Router>
-      <div className="App">
-        <h1>Movie Searcher</h1>
-          <Switch>
+        <AppBar position="static" >
+          <Toolbar variant="dense">
+              <Typography variant="h1">
+                Movies & Series
+              </Typography>
+          </Toolbar>
+        </AppBar>
+        <Switch>
             <Route exact path="/" render={()=>(
               <>
               <Form searchMovies={this.searchMovies}/>
@@ -68,7 +69,6 @@ class App extends React.Component{
             />
             <Route path="/movie/:id/:title" render={(props)=><Movie {...props}/>}/>
         </Switch>
-      </div>
       </Router>
     );
   }

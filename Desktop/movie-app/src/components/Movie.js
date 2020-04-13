@@ -38,11 +38,11 @@ export default class Movie extends React.Component{
     }
     render(){
         return (
-        <>
-            <h1>{this.state.movie.data.Title}</h1>
-            <p>{this.state.movie.data.Plot}</p>
-            <p>Rating: {this.state.movie.data.imdbRating}</p>
-        </>
+            <div className="movieField">
+                <h1>{this.state.movie.data.Title}</h1>
+                <p>{this.state.movie.data.Plot}</p>
+                <h3>Rating: {this.state.movie.data.imdbRating}</h3>
+            </div>
         )
     }
 }

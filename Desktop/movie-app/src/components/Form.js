@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { TextField, Button } from "@material-ui/core";
 
 export default class Form extends Component {
     constructor(props){
@@ -15,8 +16,10 @@ export default class Form extends Component {
        this.setState({
             searchField : {
                 ...this.state.searchField,
-                value: e.target.value // of gwn value => value: e.target.value
+                value: e.target.value, // of gwn value => value: e.target.value
+                error: false 
             }  
+                
        }) 
     }
 
@@ -45,13 +48,16 @@ export default class Form extends Component {
     render() {
         return (
             <form action="" onSubmit={this.submitHandler}>
-                <input 
+                <TextField
+                variant='outlined' 
                 type="text" 
                 className={this.state.searchField.error ? "error": ""} 
                 value={this.state.searchField.value} 
                 onChange={this.changeHandler}
                 />
-                <input type="submit" value="search"/>
+                <Button type="submit" className="searchBtn" variant="contained" color="primary">
+                    Search
+                </Button>
             </form> 
         )
     }
