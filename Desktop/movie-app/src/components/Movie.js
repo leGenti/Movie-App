@@ -99,19 +99,19 @@ export default class Movie extends React.Component{
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails className="panel">
                     <Typography>
-                      <strong>Released: </strong>
-                      {this.state.movie.data.Released}
-                    </Typography>
-                    <Typography>
                       <strong>Rating: </strong>
                       {this.state.movie.data.imdbRating}
                     </Typography>
                     <Typography>
-                      <strong>Genre: </strong> {this.state.movie.data.Genre}
-                    </Typography>
-                    <Typography>
                       <strong>Runtime: </strong>
                       {this.state.movie.data.Runtime}
+                    </Typography>
+                    <Typography>
+                      <strong>Released: </strong>
+                      {this.state.movie.data.Released}
+                    </Typography>
+                    <Typography>
+                      <strong>Genre: </strong> {this.state.movie.data.Genre}
                     </Typography>
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
