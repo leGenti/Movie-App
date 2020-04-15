@@ -127,8 +127,7 @@ code {
 }
 
 .arrowBack{
-  top: 0 !important;
-  left: 0 !important;
+  margin-top: -5px;
   background-color: rgba(66, 184, 248, .2) !important;
   border: 2px solid rgba(66, 184, 248, 1);
   color: rgba(66, 184, 248, 1) !important;
