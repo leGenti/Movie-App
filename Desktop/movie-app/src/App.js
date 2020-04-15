@@ -24,7 +24,7 @@ class App extends React.Component{
       }
     }
   }
-  
+
   searchMovies = (str) => {
     this.setState({
       movies: {
@@ -53,7 +53,7 @@ class App extends React.Component{
       <Router>
         <AppBar position="static" >
           <Toolbar variant="dense">
-              <Typography variant="h1">
+              <Typography variant="h3">
                 Movies & Series
               </Typography>
           </Toolbar>

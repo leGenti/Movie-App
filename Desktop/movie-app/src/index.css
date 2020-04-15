@@ -108,4 +108,54 @@ code {
   color: rgba(66, 184, 248, 1);
 }
 
+.movie-img{
+  border-radius: 5px;
+  box-shadow: 1px 3px 4px rgba(68, 31, 31, 0.5);
+}
+
+.expansion{
+  background-color: rgba(66, 184, 248, .7) !important;
+  color: black !important;
+  border: rgba(66, 184, 248, 1) !important;
+  margin: .5em;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.arrowBack{
+  top: 0 !important;
+  left: 0 !important;
+  background-color: rgba(66, 184, 248, .2) !important;
+  border: 2px solid rgba(66, 184, 248, 1);
+  color: rgba(66, 184, 248, 1) !important;
+  border-radius: 50%;
+  height: 40px !important;
+  width: 40px !important;
+}
+
+.h1movie{
+  text-shadow: 1px 4px 3px #bbb;
+  margin-top: -0.7px;
+}
+
+.expocontainer{
+  margin: 3em auto;
+  display: block;
+  max-width: 600px !important;
+  
+}
+
+.infoBtn{
+  text-decoration: underline white !important;
+}
+
+.MuiIconButton-root:hover{
+  background-color: white !important;
+}
+
+
 
